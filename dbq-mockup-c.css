@@ -1,27 +1,20 @@
-/* dbq-mockup-c.css — "Authority / Presence" override
- * Bold trust. These people are established. Visual weight and confidence.
- * Dark hero, big stat numbers, heavy type, sticky mobile CTA. */
+/* dbq-mockup-c.css — Variation C: "Bolder"
+ * Close to B but heavier. Darker hero, stronger contrast, more visual weight.
+ * The difference: B is warm, C is confident/bold. Same layout. */
 
-/* ── Bold palette ── */
+/* ── Deeper palette ── */
 @layer cup-override {
   :root,
   :root[data-theme="light"] {
     --dbq-color-hero-bg:      #0d1f15;
-    --dbq-color-hero-text:    #ffffff;
-    --cup-color-primary:      #2d6a4f;
     --dbq-color-accent:       #52b788;
-    --dbq-color-dark:         #0d1f15;
   }
 }
 
-/* ── Hero: dark, bold, two-column ── */
+/* ── Hero: same two-column, darker gradient ── */
 .dbq-hero {
-  background: linear-gradient(160deg, #0d1f15 0%, #1b4332 40%, #2d6a4f 100%);
-  color: #fff;
+  background: linear-gradient(160deg, #0d1f15 0%, #1b4332 50%, #2d6a4f 100%);
   padding: 4rem 2rem;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
   text-align: left;
 }
 .dbq-hero__inner {
@@ -32,30 +25,34 @@
   align-items: center;
 }
 .dbq-hero h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: left;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.15;
-  text-align: left;
 }
 .dbq-hero__subtitle {
-  font-size: 1.1rem;
-  opacity: 0.8;
-  max-width: 650px;
   text-align: left;
+  font-size: 1.05rem;
+  opacity: 0.8;
 }
 .dbq-hero__actions {
   justify-content: flex-start;
 }
 
-/* ── Hero photo: bold frame ── */
+/* ── Photo + Quote: stronger frame ── */
+.dbq-hero__person {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
 .dbq-hero__photo {
   width: 100%;
   aspect-ratio: 4/5;
-  border-radius: 12px;
+  max-height: 420px;
+  border-radius: 10px;
   overflow: hidden;
   border: 3px solid #52b788;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
 }
 .dbq-hero__photo img {
   width: 100%;
@@ -63,141 +60,97 @@
   object-fit: cover;
   display: block;
 }
+.dbq-hero__quote {
+  text-align: center;
+  padding: 0 0.5rem;
+}
+.dbq-hero__quote-text {
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 0.75rem;
+}
+.dbq-hero__quote-author {
+  font-weight: 800;
+  color: #52b788;
+  font-size: 1rem;
+}
+.dbq-hero__quote-title {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+}
 
+/* ── Buttons: brighter accent ── */
 .dbq-hero .dbq-btn--primary {
   background: #52b788;
   color: #0d1f15;
   font-weight: 800;
-  font-size: 1rem;
-  padding: 0.85rem 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(82,183,136,0.3);
+  padding: 0.8rem 1.8rem;
+  box-shadow: 0 4px 16px rgba(82,183,136,0.3);
 }
 .dbq-hero .dbq-btn--primary:hover {
   background: #6fc99e;
-  box-shadow: 0 6px 28px rgba(82,183,136,0.45);
 }
 .dbq-hero .dbq-btn--secondary {
   border-color: rgba(82,183,136,0.5);
   color: #52b788;
 }
 
-/* ── Stats bar (replaces trust bar) ── */
+/* ── Trust bar ── */
 .dbq-trust {
-  background: #0d1f15;
-  border-bottom: none;
-  padding: 2rem;
+  border-bottom: 2px solid #e8f0ec;
 }
-.dbq-trust__inner {
-  gap: 3rem;
-}
-.dbq-trust__item {
-  flex-direction: column;
-  text-align: center;
-  color: #fff;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  gap: 0.25rem;
-}
-.dbq-trust__item svg {
-  display: none;
-}
-.dbq-trust__item::before {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #52b788;
-  letter-spacing: -0.02em;
-  text-transform: none;
-  line-height: 1;
-}
-.dbq-trust__item:nth-child(1)::before { content: 'Licensed'; }
-.dbq-trust__item:nth-child(2)::before { content: 'Veteran'; }
-.dbq-trust__item:nth-child(3)::before { content: 'Mon–Fri'; }
-.dbq-trust__item:nth-child(4)::before { content: 'California'; }
 
-/* ── Sections: bolder ── */
+/* ── Section headings: underline accent ── */
 .dbq-section__header h2 {
-  font-size: 1.75rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #0d1f15;
 }
 .dbq-section__header h2::after {
   content: '';
   display: block;
   width: 48px;
-  height: 4px;
+  height: 3px;
   background: #52b788;
-  margin: 0.75rem auto 0;
+  margin: 0.6rem auto 0;
   border-radius: 2px;
 }
 
-/* ── Cards: heavier, darker border on hover ── */
+/* ── Cards: hover accent ── */
 .dbq-card {
   border-radius: 8px;
-  border: 2px solid #eee;
   transition: all 0.2s ease;
 }
 .dbq-card:hover {
   border-color: #52b788;
-  box-shadow: 0 8px 24px rgba(45,106,79,0.12);
   transform: translateY(-2px);
-}
-.dbq-card__icon {
-  color: #52b788;
-}
-.dbq-card h3 {
-  font-weight: 700;
-  font-size: 1.1rem;
 }
 
 /* ── Steps: bold numbers ── */
 .dbq-step__number {
-  width: 56px;
-  height: 56px;
-  font-size: 1.3rem;
+  width: 52px;
+  height: 52px;
+  font-size: 1.2rem;
   font-weight: 800;
   background: #0d1f15;
   color: #52b788;
 }
 
-/* ── Bio: squared, modern ── */
-.dbq-bio__photo {
-  width: 110px;
-  height: 110px;
-  border-radius: 12px;
-  background: linear-gradient(145deg, #0d1f15, #1b4332);
-  border: 3px solid #52b788;
-}
-.dbq-bio__photo svg {
-  color: #52b788;
-}
-
-/* ── CTA: dark, bold ── */
+/* ── CTA: deeper ── */
 .dbq-cta {
   background: linear-gradient(160deg, #0d1f15 0%, #1b4332 100%);
-  padding: 4rem 2rem;
-}
-.dbq-cta h2 {
-  font-size: 1.75rem;
-  font-weight: 800;
 }
 .dbq-cta .dbq-btn--primary {
   background: #52b788;
   color: #0d1f15;
   font-weight: 800;
-  box-shadow: 0 4px 20px rgba(82,183,136,0.3);
 }
 
-/* ── Footer: very dark ── */
-.dbq-footer {
-  background: #0a1810;
-}
-
-/* ── Header: dark accent line ── */
+/* ── Header: accent line ── */
 .dbq-header {
-  border-bottom: 2px solid #0d1f15;
+  border-bottom: 2px solid #1b4332;
 }
 
 /* ── Sticky mobile CTA ── */
@@ -228,6 +181,8 @@
   width: 100%;
   max-width: 400px;
 }
+
+/* ── Mobile ── */
 @media (max-width: 768px) {
   .dbq-sticky-cta {
     display: block;
@@ -247,51 +202,11 @@
     justify-content: center;
   }
   .dbq-hero__photo {
-    max-width: 280px;
+    max-width: 240px;
     margin: 0 auto;
     aspect-ratio: 1;
   }
-}
-
-/* ── Personal message: authority version — dark, bold ── */
-.dbq-message {
-  background: #0d1f15;
-  padding: 3.5rem 2rem;
-  border-top: 3px solid #52b788;
-}
-.dbq-message__inner {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-.dbq-message__quote {
-  font-size: 1.15rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 1.5rem;
-}
-.dbq-message__quote::before {
-  content: '\201C';
-  font-size: 3rem;
-  color: #52b788;
-  display: block;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-.dbq-message__author {
-  font-weight: 800;
-  color: #52b788;
-  font-size: 1.1rem;
-}
-.dbq-message__title {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.5);
-}
-
-/* ── Page hero (subpages): dark ── */
-.dbq-page-hero {
-  background: linear-gradient(160deg, #0d1f15 0%, #1b4332 40%, #2d6a4f 100%);
-  padding: 3rem 2rem;
+  .dbq-hero__person {
+    order: -1;
+  }
 }
