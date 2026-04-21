@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dbqhelp.com/sitemap.xml
