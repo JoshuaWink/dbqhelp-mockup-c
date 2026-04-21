@@ -1,0 +1,220 @@
+/* dbq-mockup-c.css — "Authority / Presence" override
+ * Bold trust. These people are established. Visual weight and confidence.
+ * Dark hero, big stat numbers, heavy type, sticky mobile CTA. */
+
+/* ── Bold palette ── */
+@layer cup-override {
+  :root,
+  :root[data-theme="light"] {
+    --dbq-color-hero-bg:      #0d1f15;
+    --dbq-color-hero-text:    #ffffff;
+    --cup-color-primary:      #2d6a4f;
+    --dbq-color-accent:       #52b788;
+    --dbq-color-dark:         #0d1f15;
+  }
+}
+
+/* ── Hero: full-viewport dark, bold ── */
+.dbq-hero {
+  background: linear-gradient(160deg, #0d1f15 0%, #1b4332 40%, #2d6a4f 100%);
+  color: #fff;
+  padding: 5rem 2rem 4rem;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+.dbq-hero__inner {
+  max-width: 900px;
+}
+.dbq-hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.dbq-hero__subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dbq-hero .dbq-btn--primary {
+  background: #52b788;
+  color: #0d1f15;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(82,183,136,0.3);
+}
+.dbq-hero .dbq-btn--primary:hover {
+  background: #6fc99e;
+  box-shadow: 0 6px 28px rgba(82,183,136,0.45);
+}
+.dbq-hero .dbq-btn--secondary {
+  border-color: rgba(82,183,136,0.5);
+  color: #52b788;
+}
+
+/* ── Stats bar (replaces trust bar) ── */
+.dbq-trust {
+  background: #0d1f15;
+  border-bottom: none;
+  padding: 2rem;
+}
+.dbq-trust__inner {
+  gap: 3rem;
+}
+.dbq-trust__item {
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  gap: 0.25rem;
+}
+.dbq-trust__item svg {
+  display: none;
+}
+.dbq-trust__item::before {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #52b788;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  line-height: 1;
+}
+.dbq-trust__item:nth-child(1)::before { content: 'Licensed'; }
+.dbq-trust__item:nth-child(2)::before { content: 'Veteran'; }
+.dbq-trust__item:nth-child(3)::before { content: 'Mon–Fri'; }
+.dbq-trust__item:nth-child(4)::before { content: 'California'; }
+
+/* ── Sections: bolder ── */
+.dbq-section__header h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0d1f15;
+}
+.dbq-section__header h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 4px;
+  background: #52b788;
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
+}
+
+/* ── Cards: heavier, darker border on hover ── */
+.dbq-card {
+  border-radius: 8px;
+  border: 2px solid #eee;
+  transition: all 0.2s ease;
+}
+.dbq-card:hover {
+  border-color: #52b788;
+  box-shadow: 0 8px 24px rgba(45,106,79,0.12);
+  transform: translateY(-2px);
+}
+.dbq-card__icon {
+  color: #52b788;
+}
+.dbq-card h3 {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* ── Steps: bold numbers ── */
+.dbq-step__number {
+  width: 56px;
+  height: 56px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  background: #0d1f15;
+  color: #52b788;
+}
+
+/* ── Bio: squared, modern ── */
+.dbq-bio__photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #0d1f15, #1b4332);
+  border: 3px solid #52b788;
+}
+.dbq-bio__photo svg {
+  color: #52b788;
+}
+
+/* ── CTA: dark, bold ── */
+.dbq-cta {
+  background: linear-gradient(160deg, #0d1f15 0%, #1b4332 100%);
+  padding: 4rem 2rem;
+}
+.dbq-cta h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+.dbq-cta .dbq-btn--primary {
+  background: #52b788;
+  color: #0d1f15;
+  font-weight: 800;
+  box-shadow: 0 4px 20px rgba(82,183,136,0.3);
+}
+
+/* ── Footer: very dark ── */
+.dbq-footer {
+  background: #0a1810;
+}
+
+/* ── Header: dark accent line ── */
+.dbq-header {
+  border-bottom: 2px solid #0d1f15;
+}
+
+/* ── Sticky mobile CTA ── */
+.dbq-sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0d1f15;
+  padding: 0.75rem 1rem;
+  z-index: 200;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+  text-align: center;
+}
+.dbq-sticky-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #52b788;
+  color: #0d1f15;
+  font-weight: 800;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+@media (max-width: 768px) {
+  .dbq-sticky-cta {
+    display: block;
+  }
+  /* Add bottom padding to body so sticky bar doesn't cover content */
+  .dbq-page {
+    padding-bottom: 70px;
+  }
+}
+
+/* ── Page hero (subpages): dark ── */
+.dbq-page-hero {
+  background: linear-gradient(160deg, #0d1f15 0%, #1b4332 40%, #2d6a4f 100%);
+  padding: 3rem 2rem;
+}
