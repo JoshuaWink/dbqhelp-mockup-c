@@ -46,13 +46,13 @@
   gap: 1.25rem;
 }
 .dbq-hero__photo {
-  width: 100%;
-  aspect-ratio: 4/5;
-  max-height: 420px;
-  border-radius: 10px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
   overflow: hidden;
   border: 3px solid #52b788;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+  margin: 0 auto;
 }
 .dbq-hero__photo img {
   width: 100%;
@@ -202,9 +202,9 @@
     justify-content: center;
   }
   .dbq-hero__photo {
-    max-width: 240px;
+    width: 140px;
+    height: 140px;
     margin: 0 auto;
-    aspect-ratio: 1;
   }
   .dbq-hero__person {
     order: -1;
