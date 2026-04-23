@@ -39,10 +39,19 @@
   justify-content: flex-start;
 }
 
+/* ── Hero content column ── */
+.dbq-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
 /* ── Photo + Quote: stronger frame ── */
 .dbq-hero__person {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.25rem;
 }
 .dbq-hero__photo {
@@ -52,7 +61,7 @@
   overflow: hidden;
   border: 3px solid #52b788;
   box-shadow: 0 8px 28px rgba(0,0,0,0.25);
-  margin: 0 auto;
+  background: #fff;
 }
 .dbq-hero__photo img {
   width: 100%;
@@ -202,9 +211,8 @@
     justify-content: center;
   }
   .dbq-hero__photo {
-    width: 140px;
-    height: 140px;
-    margin: 0 auto;
+    width: 120px;
+    height: 120px;
   }
   .dbq-hero__person {
     order: -1;
