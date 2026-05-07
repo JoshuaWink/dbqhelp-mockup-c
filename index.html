@@ -186,5 +186,16 @@
   <script src="dbq-app.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","G-XXXXXXXXXX")</script>
+  <script>
+  /* Cache-buster: reloads once when version.txt changes */
+  (function(){
+    if(navigator.userAgent.match(/bot|crawl|spider|slurp|Googlebot/i))return;
+    fetch('version.txt',{cache:'no-store'}).then(function(r){return r.text()}).then(function(v){
+      v=v.trim();var k='dbq_v';var old=localStorage.getItem(k);
+      if(!old){localStorage.setItem(k,v);return}
+      if(old!==v){localStorage.setItem(k,v);location.reload()}
+    }).catch(function(){})
+  })()
+  </script>
 </body>
 </html>
